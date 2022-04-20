@@ -1,0 +1,161 @@
+<div class="graph-modal js-modal">
+  <!-- Заказать звонок -->
+  <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="modal-call">
+    <div class="graph-modal__content">
+      <form class="form js-form-call">
+        <div class="form__header">
+          <span class="form__close js-close" aria-label="Закрыть модальное окно">
+            <svg class="close-svg" viewbox="0 0 24 24"><use xlink:href="#icon-close"></use></svg>
+          </span>
+        </div>
+        <fieldset class="form__body">
+          <legend class="form__legend">Заказать звонок</legend>
+          <div class="form__body_item">
+            <label class="label" for="name-call">Имя</label>
+            <input class="input input-name" type="text" name="name-call" placeholder="Укажите ваше имя" required>
+          </div>
+          <div class="form__body_item">
+            <label class="label" for="tel-call">Контактный телефон</label>
+            <input class="input input-tel" type="tel" name="tel-call" placeholder="+7(ХХХ) ХХХ-ХХ-ХХ" required>
+          </div>
+        </fieldset>
+        <fieldset class="form__footer">
+          <label class="label label--agree" for="agree-call">
+            <input class="checkbox input-agree" id="agree-call" type="checkbox" required>
+            <span>Даю согласие на обработку и использование персональных данных согласно 152-ФЗ, с <a href="#" target="_blank">правилами политики обработки персональных данных</a> ознакомлен</span>
+          </label>
+          <button type="submit" class="btn block">Отправить</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+  <!-- Задать вопрос -->
+  <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="modal-question">
+    <div class="graph-modal__content">
+      <form class="form js-form-question">
+        <div class="form__header">
+          <span class="form__close graph-modal-close js-close" aria-label="Закрыть модальное окно">
+            <svg class="close-svg" viewbox="0 0 24 24"><use xlink:href="#icon-close"></use></svg>
+          </span>
+        </div>
+        <fieldset class="form__body">
+          <legend class="form__legend">Задать вопрос специалисту</legend>
+          <div class="form__body_item">
+            <label class="label" for="name-question">Имя</label>
+            <input class="input input-name" type="text" name="name-question" placeholder="Укажите ваше имя" required>
+          </div>
+          <div class="form__body_item">
+            <label class="label" for="email-question">E-mail</label>
+            <input class="input input-mail" type="email" name="email-question" placeholder="Укажите ваш email" required>
+          </div>
+          <div class="form__body_item">
+            <label class="label">Выберите направление</label>
+            <div class="select-wrapper">
+              <select class="select select-direction">
+                <option value="" selected disabled>Не выбрано</option>
+                <option value="Выбрано 1">Выбрано 1</option>
+                <option value="Выбрано 2">Выбрано 2</option>
+                <option value="Выбрано 3">Выбрано 3</option>
+                <option value="Выбрано 4">Выбрано 4</option>
+              </select>
+            </div>
+          </div>
+          <div class="form__body_item">
+            <label class="label" for="tel-question">Контактный телефон</label>
+            <input class="input input-tel" type="tel" name="tel-question" placeholder="+7(ХХХ) ХХХ-ХХ-ХХ" required>
+          </div>
+          <div class="form__body_item">
+            <label class="label" for="message-question">Вопрос</label>
+            <textarea class="textarea input-question" name="message-question" placeholder="Ваш текст" required></textarea>
+          </div>
+        </fieldset>
+        <fieldset class="form__footer">
+          <label class="label label--agree" for="agree-question">
+            <input class="checkbox input-agree" id="agree-question" type="checkbox" required>
+            <span>Даю согласие на обработку и использование персональных данных согласно 152-ФЗ, с <a href="#" target="_blank">правилами политики обработки персональных данных</a> ознакомлен</span>
+          </label>
+          <button type="submit" class="btn block">Отправить</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+  <!-- Подробнее о вакансии-->
+  <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="modal-vacancia">
+    <div class="graph-modal__content">
+      <form class="form js-form-vacancia">
+        <div class="form__header">
+          <span class="form__close graph-modal-close js-close" aria-label="Закрыть модальное окно">
+            <svg class="close-svg" viewbox="0 0 24 24"><use xlink:href="#icon-close"></use></svg>
+          </span>
+        </div>
+        <div class="form__body">
+          <div class="form__legend">Какой-нибудь заголовок вакансии в несколько строк</div>
+          <div class="form__badges">
+            <div class="badge form__badges_item">Онкология</div>
+            <div class="badge-date form__badges_item">
+              <div class="badge-date__icon"></div>
+              <span class="badge-date__text">Опыт работы: 1–3 года</span>
+            </div>
+            <div class="badge-time form__badges_item">
+              <div class="badge-time__icon"></div>
+              <span class="badge-time__text">Полная занятость, полный день</span>
+            </div>
+          </div>
+          <div class="form__content">
+            <p class="form__content_title">от 45 000 до 70 000 ₽ до вычета налогов</p>
+            <p class="form__content_text">Ознакомительный какой-нибудь текст о том, кто нужен в нескольких словах, а далее обязанности, требования и условия.</p>
+            <p class="form__content_title">Обязанности:</p>
+            <div class="form__content_text">
+              <ul class="list-form">
+                <li class="list-form__item">Организация медицинской деятельности предприятия</li>
+                <li class="list-form__item">Оказание медицинской помощи, в том числе экстренной</li>
+                <li class="list-form__item">Работа с контрагентами, заказ необходимого оборудования и материалов</li>
+                <li class="list-form__item">Работа с контролирующими органами в рамках медицинской дедеятельности</li>
+                <li class="list-form__item">Ведение блока охраны труда медицинского персонала</li>
+              </ul>
+            </div>
+            <p class="form__content_title">Требования:</p>
+            <div class="form__content_text">
+              <ul class="list-form">
+                <li class="list-form__item">Высшее образование, дополнительная профессиональная поподготовка (интернатура/ординатура) — по одной из спспециальностей: "Терапия", "Неврология, "Гериатрия"</li>
+                <li class="list-form__item">Стрессоустойчивость, доброжелательность</li>
+              </ul>
+            </div>
+            <p class="form__content_title">Условия:</p>
+            <p class="form__content_text">Оформление соглаcно ТК РФ</p>
+          </div>
+        </div>
+        <fieldset class="form__body">
+          <legend class="form__legend">Для отклика заполните форму</legend>
+          <div class="form__body_item">
+            <label class="label" for="name-vacancia">Имя</label>
+            <input class="input input-name" type="text" name="name-vacancia" placeholder="Укажите ваше имя">
+          </div>
+          <div class="form__body_item">
+            <label class="label" for="email-vacancia">E-mail</label>
+            <input class="input input-mail" type="email" name="email-vacancia" placeholder="Укажите ваш email">
+          </div>
+          <div class="form__body_item">
+            <label class="label" for="tel-vacancia">Контактный телефон</label>
+            <input class="input input-tel" type="tel" name="tel-vacancia" placeholder="+7(ХХХ) ХХХ-ХХ-ХХ" required>
+          </div>
+          <div class="form__body_item">
+            <label class="label" for="url-vacancia">Ссылка на резюме</label>
+            <input class="input input-url" type="url" name="url-vacancia" placeholder="Ссылка на резюме">
+          </div>
+          <div class="form__body_item">
+            <label class="label" for="message-vacancia">Сопроводительное письмо</label>
+            <textarea class="textarea input-message" name="message-vacancia" placeholder="Ваш текст"></textarea>
+          </div>
+        </fieldset>
+        <fieldset class="form__footer">
+          <label class="label label--agree" for="agree-vacancia">
+            <input class="checkbox input-agree" id="agree-vacancia" type="checkbox">
+            <span>Даю согласие на обработку и использование персональных данных согласно 152-ФЗ, с <a href="#" target="_blank">правилами политики обработки персональных данных</a> ознакомлен</span>
+          </label>
+          <button type="submit" class="btn block">Отправить</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>

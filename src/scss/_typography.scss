@@ -1,0 +1,14 @@
+@use "./mixins/fluid-size" as fluid;
+
+/* Multiple properties with same values */
+// h1 {
+// 	@include fluid.calculate((padding-bottom), 20rem, 76rem, 0.6rem, 1.6rem);
+// 	letter-spacing: -0.02em;
+// }
+
+h1 {
+	@include fluid.calculate(font-size, 320px, 1480px, 30px, 40px);
+	font-weight: 600;
+	line-height: 1.4;
+	letter-spacing: -0.02em;
+}
