@@ -1,0 +1,26 @@
+@use './button' as btn-tab;
+@use "../mixins/fluid-size" as size;
+
+// .tabs
+// =============================
+.tabs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  &__item {
+    @extend .btn-tab;
+    @include size.calculate(margin-right, 320px, 1780px, 6px, 10px);
+    @include size.calculate(margin-bottom, 320px, 1780px, 6px, 10px);
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &.active {
+      border-color: var(--white);
+      color: var(--white);
+      pointer-events: none;
+    }
+  }
+}

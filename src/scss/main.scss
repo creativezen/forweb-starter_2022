@@ -2,12 +2,21 @@
 @use "./reset";
 @use "./vars";
 @use "./fonts";
-@use "./settings";
 @use "./typography";
+@use "./settings";
 @use "./vendor";
-
-// layout
 
 // components
 
+
+// layout
+@use "./layout/container";
+@use "./layout/grid";
+@use "./layout/header";
+@use "./layout/nav";
+@use "./layout/page";
+@use "./layout/section";
+@use "./layout/footer"
+
 // pages
+

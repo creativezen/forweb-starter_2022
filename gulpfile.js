@@ -23,7 +23,6 @@ const image = require('gulp-imagemin');
 const typograf = require('gulp-typograf');
 const webp = require('gulp-webp');
 const avif = require('gulp-avif');
-const favicons = require('gulp-favicons');
 const mainSass = gulpSass(sass);
 const pxtorem = require('gulp-pxtorem');
 const webpackStream = require('webpack-stream');
@@ -279,60 +278,6 @@ const avifImages = () => {
     .pipe(dest(paths.buildImgFolder))
 };
 
-// favicon lg
-const faviconLarge = () => {
-  return src(`${paths.srcImgFolder}/favicon/favicon-lg.{jpg,jpeg,png,svg}`)
-		.pipe(plumber())
-		.pipe(favicons({
-			appName: config.name,
-			appShortName: config.name,
-			appDescription: config.description,
-			html: 'favicons.html',
-			pipeHTML: true,
-			url: 'http://localhost/',
-			path: '/img/favicon/',
-			replace: true,
-			version: 3,
-			lang: 'ru-RU',
-			icons: {
-				appleIcon: true,
-				favicons: false,
-				online: false,
-				appleStartup: false,
-				android: true,
-				firefox: true,
-				yandex: true,
-				windows: true,
-				coast: true
-			}
-		}))
-		.pipe(dest(`${paths.buildImgFolder}/favicon`))
-}
-
-// favicon sm
-const faviconSmall = () => {
-  return src(`${paths.srcImgFolder}/favicon/favicon-sm.{jpg,jpeg,png,svg}`)
-		.pipe(plumber())
-		.pipe(favicons({
-			html: 'favicons-logo.html',
-			pipeHTML: true,
-			path: '/img/favicon/',
-			replace: true,
-			icons: {
-				appleIcon: false,
-				favicons: true,
-				online: false,
-				appleStartup: false,
-				android: false,
-				firefox: false,
-				yandex: false,
-				windows: false,
-				coast: false
-			}
-		}))
-		.pipe(dest(`${paths.buildImgFolder}/favicon`))
-}
-
 const htmlInclude = () => {
   return src([`${srcFolder}/*.html`])
     .pipe(fileInclude({
@@ -389,14 +334,6 @@ const rewrite = () => {
     .pipe(dest(buildFolder));
 }
 
-const htmlMinify = () => {
-  return src(`${buildFolder}/**/*.html`)
-    .pipe(htmlmin({
-      collapseWhitespace: true
-    }))
-    .pipe(dest(buildFolder));
-}
-
 const zipFiles = (done) => {
   del.sync([`${buildFolder}/*.zip`]);
   return src(`${buildFolder}/**/*.*`, {})
@@ -415,11 +352,11 @@ const toProd = (done) => {
   done();
 };
 
-exports.default = series(clean, htmlInclude, scripts, styles, resources, images, webpImages, avifImages, svgSprites, faviconLarge, faviconSmall, watchFiles)
+exports.default = series(clean, htmlInclude, scripts, styles, resources, images, webpImages, avifImages, svgSprites, watchFiles)
 
-exports.backend = series(clean, htmlInclude, scriptsBackend, stylesBackend, resources, images, webpImages, avifImages, svgSprites, faviconLarge, faviconSmall)
+exports.backend = series(clean, htmlInclude, scriptsBackend, stylesBackend, resources, images, webpImages, avifImages, svgSprites)
 
-exports.build = series(toProd, clean, htmlInclude, scripts, styles, resources, images, webpImages, avifImages, svgSprites, faviconLarge, faviconSmall, htmlMinify)
+exports.build = series(toProd, clean, htmlInclude, scripts, styles, resources, images, webpImages, avifImages, svgSprites)
 
 exports.cache = series(cache, rewrite)
 

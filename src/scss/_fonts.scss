@@ -1,6 +1,5 @@
 @use "./mixins/font-face" as font;
 
-@include font.font-face("TT-Hoves", "TTHoves-Bold", 700, normal);
-@include font.font-face("TT-Hoves", "TTHoves-DemiBold", 600, normal);
-@include font.font-face("TT-Hoves", "TTHoves-Medium", 500, normal);
-@include font.font-face("TT-Hoves", "TTHoves-Regular", 400, normal);
+@include font.font-face("Rubik", "Rubik-Light", 300, normal);
+@include font.font-face("Rubik", "Rubik-Regular", 400, normal);
+@include font.font-face("Rubik", "Rubik-SemiBold", 500, normal);

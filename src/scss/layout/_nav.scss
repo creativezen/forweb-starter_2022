@@ -1,5 +1,28 @@
-@use '../mixins' as mix;
+@use "../mixins/fluid-size" as size;
 
+// nav
+// ===================================
 .nav {
 
+  @media only screen and (max-width: 780px) {
+    display: none;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+
+    li {
+      a {
+        @include size.calculate(font-size, 320px, 1780px, 13px, 17px);
+        font-weight: 500;
+        line-height: 1;
+        text-decoration: none;
+      }
+    }
+
+    li + li {
+      margin-left: 40px;
+    }
+  }
 }

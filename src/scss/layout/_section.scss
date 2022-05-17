@@ -1,5 +1,62 @@
-@use "../mixins" as mix;
+@use "../mixins/fluid-size" as size;
 
+// section
+// =============================
 .section {
 
+  &__header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    @media only screen and (max-width: 580px) {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .link-icon {
+        margin-top: 20px;
+      }
+    }
+
+    .title,
+    .title-project {
+      margin-top: -15px; //Компенсация line-height;
+      margin-left: -8px;
+
+      @media only screen and (max-width: 780px) {
+        margin-top: -10px;
+      }
+
+      @media only screen and (max-width: 480px) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__header + &__body,
+  &__header + &__footer,
+  &__body + &__footer {
+    @include size.calculate(margin-top, 320px, 1780px, 20px, 60px);
+  }
+
+  &.stream {
+    @include size.calculate(padding-top, 320px, 1780px, 60px, 100px);
+    @include size.calculate(padding-bottom, 320px, 1780px, 60px, 110px);
+  }
+}
+
+// section form
+// =============================
+.section-form {
+  background-color: var(--gray-bg);
+
+  .section__header {
+    color: var(--black);
+  }
+
+  .grid-child {
+    @media only screen and (max-width: 680px) {
+      grid-column: 12 span;
+    }
+  }
 }

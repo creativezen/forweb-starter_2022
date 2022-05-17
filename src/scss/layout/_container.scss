@@ -1,3 +1,12 @@
-.container {
+@use "../mixins/fluid-size" as size;
 
+// container
+// ===================================
+.container {
+  margin: 0 auto;
+  padding-top: 0;
+  padding-bottom: 0;
+  @include size.calculate(padding-left, 320px, 1780px, 16px, 60px);
+  @include size.calculate(padding-right, 320px, 1780px, 16px, 60px);
+  max-width: var(--container-width);
 }

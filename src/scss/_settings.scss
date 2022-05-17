@@ -1,3 +1,14 @@
+body {
+  background-color: var(--black);
+  font-family: var(--font-family);
+  color: var(--white);
+}
+
+main {
+  transition: var(--transition);
+  opacity: 1;
+}
+
 img {
   height: auto;
   max-width: 100%;
@@ -15,6 +26,14 @@ a {
 .block {
   width: 100%;
   min-width: 100%;
+}
+
+.red {
+  color: var(--brand-red);
+}
+
+.white {
+  color: var(--white);
 }
 
 .is-hidden {
@@ -45,12 +64,6 @@ a {
   width: 1px;
   height: 1px;
   clip: rect(0 0 0 0);
-}
-
-.container {
-  margin: 0 auto;
-  padding: 0 var(--container-offset);
-  max-width: var(--container-width);
 }
 
 .js-focus-visible :focus:not(.focus-visible) {

@@ -1,9 +1,9 @@
-@use "../mixins" as mix;
+@use "../mixins/fluid-size" as size;
 
 .page {
   height: 100%;
   font-family: var(--font-family);
-  @include mix.interpolate(font-size, 320px, 1360px, 14.5px, 16px);
+  @include size.calculate(font-size, 320px, 1780px, 14px, 17px);
   color: var(--dark-primary);
 }
 
@@ -13,5 +13,5 @@
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  background-color: var(--light-075);
+  background-color: var(--black);
 }
