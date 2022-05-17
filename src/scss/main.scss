@@ -7,7 +7,8 @@
 @use "./vendor";
 
 // components
-
+@use "./components/button";
+@use "./components/form";
 
 // layout
 @use "./layout/container";
@@ -16,7 +17,8 @@
 @use "./layout/nav";
 @use "./layout/page";
 @use "./layout/section";
-@use "./layout/footer"
+@use "./layout/footer";
+@use "./layout/modal";
 
 // pages
 

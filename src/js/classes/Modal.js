@@ -1,16 +1,17 @@
-export default class ModalWindow {
+export default class GraphModal {
   constructor(options) {
     let defaultOptions = {
       isOpen: () => {},
       isClose: () => {},
     }
     this.options = Object.assign(defaultOptions, options);
-    this.modal = document.querySelector('.graph-modal');
+    this.modal = document.querySelector('.forweb-modal');
     this.speed = 300;
     this.animation = 'fade';
     this._reOpen = false;
     this._nextContainer = false;
     this.modalContainer = false;
+    this.modalContent = false
     this.isOpen = false;
     this.previousActiveElement = false;
     this._focusElements = [
@@ -30,19 +31,19 @@ export default class ModalWindow {
   events() {
     if (this.modal) {
       document.addEventListener('click', function (e) {
-        const clickedElement = e.target.closest(`[data-graph-path]`);
+        const clickedElement = e.target.closest(`[data-forweb-path]`);
         if (clickedElement) {
-          let target = clickedElement.dataset.graphPath;
-          let animation = clickedElement.dataset.graphAnimation;
-          let speed = clickedElement.dataset.graphSpeed;
+          let target = clickedElement.dataset.forwebPath;
+          let animation = clickedElement.dataset.forweAnimation;
+          let speed = clickedElement.dataset.forweSpeed;
           this.animation = animation ? animation : 'fade';
           this.speed = speed ? parseInt(speed) : 300;
-          this._nextContainer = document.querySelector(`[data-graph-target="${target}"]`);
+          this._nextContainer = document.querySelector(`[data-forweb-target="${target}"]`);
           this.open();
           return;
         }
 
-        if (e.target.closest('.graph-modal__close')) {
+        if (e.target.closest('.forweb-modal__close')) {
           this.close();
           return;
         }
@@ -60,7 +61,7 @@ export default class ModalWindow {
       }.bind(this));
 
       document.addEventListener('click', function (e) {
-        if (e.target.classList.contains('graph-modal') && e.target.classList.contains("is-open")) {
+        if (e.target.classList.contains('forweb-modal') && e.target.classList.contains("is-open")) {
           this.close();
         }
       }.bind(this));
@@ -78,9 +79,10 @@ export default class ModalWindow {
     }
 
     this.modalContainer = this._nextContainer;
+    this.modalContent = this.modalContainer.querySelector('.forweb-modal__content')
 
     if (selector) {
-      this.modalContainer = document.querySelector(`[data-graph-target="${selector}"]`);
+      this.modalContainer = document.querySelector(`[data-forweb-target="${selector}"]`);
     }
 
     this.modal.style.setProperty('--transition-time', `${this.speed / 1000}s`);
@@ -91,14 +93,14 @@ export default class ModalWindow {
 
     this.disableScroll();
 
-    this.modalContainer.classList.add('graph-modal-open');
+    this.modalContainer.classList.add('forweb-modal-open');
     this.modalContainer.classList.add(this.animation);
 
     setTimeout(() => {
       this.options.isOpen(this);
       this.modalContainer.classList.add('animate-open');
       this.isOpen = true;
-      this.focusTrap();
+      // this.focusTrap();
     }, this.speed);
   }
 
@@ -107,7 +109,7 @@ export default class ModalWindow {
       this.modalContainer.classList.remove('animate-open');
       this.modalContainer.classList.remove(this.animation);
       this.modal.classList.remove('is-open');
-      this.modalContainer.classList.remove('graph-modal-open');
+      this.modalContainer.classList.remove('forweb-modal-open');
 
       this.enableScroll();
 
@@ -116,7 +118,7 @@ export default class ModalWindow {
 
       this.options.isClose(this);
       this.isOpen = false;
-      this.focusTrap();
+      // this.focusTrap();
 
       if (this.reOpen) {
         this.reOpen = false;

@@ -23,9 +23,7 @@
 // Button default
 // ===================================
 .btn-default {
-
   @extend .btn-proto;
-
   @include size.calculate(padding-top, 320px, 1380px, 22px, 29px);
   @include size.calculate(padding-bottom, 320px, 1380px, 22px, 29px);
   @include size.calculate(padding-right, 320px, 1380px, 20px, 36px);
@@ -41,29 +39,6 @@
     padding: 8px 12px;
     font-size: 13px;
     border-radius: 3px;
-  }
-}
-
-// Button green
-// ===================================
-.btn-red {
-  color: #fff;
-  background-color: var(--brand-red);
-  border-color: var(--brand-red);
-
-  @media only screen and (max-width: 480px) {
-    width: 100%;
-  }
-
-  @include mobile.hover {
-    background-color: var(--black);
-    border-color: var(--black);
-    color: var(--white);
-  }
-
-  &:active {
-    background-color: var(--black);
-    border-color: var(--white);
   }
 }
 
@@ -84,11 +59,24 @@
 // Button
 // ===================================
 .btn {
-  @extend .btn-default;
-  @extend .btn-red;
+  @extend .btn-default; // Наследуемся от родителя
+  color: #fff;
+  background-color: var(--red);
+  border-color: var(--red);
+
+  @media only screen and (max-width: 480px) {
+    width: 100%;
+  }
 
   @include mobile.hover {
-    // border-color: var(--white);
+    background-color: var(--black);
+    border-color: var(--black);
+    color: var(--white);
+  }
+
+  &:active {
+    background-color: var(--black);
+    border-color: var(--white);
   }
 }
 
@@ -134,25 +122,5 @@
   @include mobile.hover {
     border-color: var(--white);
     color: var(--white);
-  }
-}
-
-// Button round
-// ===================================
-.btn-round {
-  @extend .btn-proto;
-  @extend .btn-red;
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  border-color: var(--brand-red);
-  font-size: 16px;
-  text-transform: uppercase;
-  color: var(--white);
-
-  @include mobile.hover {
-    border-color: var(--white);
-    background-color: var(--white);
-    color: var(--black);
   }
 }
