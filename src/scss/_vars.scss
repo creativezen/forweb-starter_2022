@@ -1,13 +1,13 @@
 // colors
 :root {
-  // Text
+  // Font
   --font-family: "Rubik", sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
 
   // Layout
   --max-width: 1920px;
   --min-widht: 320px;
-  --content-width: 1780px;
-  --container-offset: 80px;
+  --content-width: 1280px;
+  --container-offset: 40px;
   --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
   --transition: all 0.3s ease-in-out;
 
@@ -16,8 +16,8 @@
   --black: rgba(2, 3, 31, 1);
 
   // brand colors
-  --brand-red: rgba(255, 0, 61, 1);
-  --brand-gradient: linear-gradient(188deg, #009CCE 0%, #1BD9B6 60.69%, #9BEFB3 100%);
+  --red: rgba(255, 0, 61, 1);
+  --gradient: linear-gradient(188deg, #009CCE 0%, #1BD9B6 60.69%, #9BEFB3 100%);
 
   // dark
   --dark: rgba(112, 112, 128, 1);

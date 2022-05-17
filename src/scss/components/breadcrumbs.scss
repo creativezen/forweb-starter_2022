@@ -1,36 +1,8 @@
+@use "../mixins/fluid-size" as size;
+@use "../mixins/disable-mob-hover" as modile;
 
 // breadcrumbs
 // ============================
 .breadcrumbs {
-  display: flex;
-  align-items: center;
 
-  li {
-
-    a {
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 1;
-      letter-spacing: 0.02em;
-      color: rgba(white, 0.5);
-      text-decoration: none;
-      transition: var(--transition);
-    }
-
-    &:hover a {
-      color: var(--white);
-    }
-  }
-
-  li:last-child {
-    pointer-events: none;
-
-    a {
-      color: var(--white);
-    }
-  }
-
-  li + li {
-    margin-left: 20px;
-  }
 }

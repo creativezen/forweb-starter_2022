@@ -1,5 +1,6 @@
 @use './button' as btn-tab;
 @use "../mixins/fluid-size" as size;
+@use "../mixins/disable-mob-hover" as modile;
 
 // .tabs
 // =============================
@@ -10,8 +11,8 @@
 
   &__item {
     @extend .btn-tab;
-    @include size.calculate(margin-right, 320px, 1780px, 6px, 10px);
-    @include size.calculate(margin-bottom, 320px, 1780px, 6px, 10px);
+    @include size.calculate(margin-right, 320px, 1380px, 6px, 10px);
+    @include size.calculate(margin-bottom, 320px, 1380px, 6px, 10px);
 
     &:last-child {
       margin-right: 0;

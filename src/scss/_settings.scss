@@ -1,11 +1,10 @@
 body {
-  background-color: var(--black);
+  background-color: var(--white);
   font-family: var(--font-family);
-  color: var(--white);
+  color: var(--black);
 }
 
 main {
-  transition: var(--transition);
   opacity: 1;
 }
 
@@ -16,24 +15,24 @@ img {
 }
 
 b {
-  color: var(--dark-black);
+  color: var(--black);
 }
 
 a {
-  color: var(--brand-blue);
+  color: var(--blue);
+}
+
+.red {
+  color: var(--red);
+}
+
+.white {
+  color: var(--white);
 }
 
 .block {
   width: 100%;
   min-width: 100%;
-}
-
-.red {
-  color: var(--brand-red);
-}
-
-.white {
-  color: var(--white);
 }
 
 .is-hidden {
@@ -70,7 +69,7 @@ a {
   outline: none;
 }
 
-.dis-scroll {
+.scroll-disabled {
   position: fixed;
   left: 0;
   top: 0;
@@ -80,7 +79,7 @@ a {
   overscroll-behavior: none;
 }
 
-.page--ios .dis-scroll {
+.page--ios .scroll-disabled {
   position: relative;
 }
 

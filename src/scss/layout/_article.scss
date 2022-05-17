@@ -1,4 +1,5 @@
-@use '../mixins' as mix;
+@use "../mixins/fluid-size" as size;
+@use "../mixins/disable-mob-hover" as modile;
 
 // article
 // ===================================

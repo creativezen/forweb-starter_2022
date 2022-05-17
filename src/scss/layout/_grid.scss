@@ -6,7 +6,7 @@
 
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  @include size.calculate(gap, 320px, 1780px, 20px, 40px);
+  @include size.calculate(gap, 320px, 1380px, 20px, 40px);
 }
 
 // grid child

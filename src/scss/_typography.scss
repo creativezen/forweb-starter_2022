@@ -1,28 +1,35 @@
 @use "./mixins/fluid-size" as size;
-
-/* Multiple properties with same values */
-// h1 {
-// 	@include fluid.calculate((padding-bottom), 20rem, 76rem, 0.6rem, 1.6rem);
-// 	letter-spacing: -0.02em;
-// }
+@use "./mixins/disable-mob-hover" as modile;
 
 // h1
 // =========================
 h1 {
-	@include size.calculate(font-size, 320px, 1780px, 40px, 120px);
+	@include size.calculate(font-size, 320px, 1780px, 80px, 120px);
 	font-weight: 300;
 	line-height: 1;
 	letter-spacing: -0.03em;
 	text-transform: uppercase;
 }
 
+// h2
+// =========================
+h2 {
+	@extend h1;
+	@include size.calculate(font-size, 320px, 1780px, 60px, 80px);
+}
+
+// h3
+// =========================
+h3 {
+	@extend h1;
+	@include size.calculate(font-size, 320px, 1780px, 30px, 50px);
+}
+
+// h4
+// =========================
 h4 {
 	@extend h1;
   @include size.calculate(font-size, 320px, 1780px, 28px, 34px);
-  font-weight: 400;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-	text-transform: none;
 }
 
 // title
@@ -41,38 +48,12 @@ h4 {
 	letter-spacing: -0.06em;
 }
 
-// title arrow
+// title category
 // =========================
-.title-arrow {
-	position: relative;
-
-	&::after {
-		content: '';
-		position: absolute;
-		margin-left: 5px;
-		width: 24px;
-		height: 24px;
-		background-repeat: no-repeat;
-		background-position: center;
-		background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.29289 17.7071C5.90237 17.3166 5.90237 16.6834 6.29289 16.2929L16.2929 6.29289C16.6834 5.90237 17.3166 5.90237 17.7071 6.29289C18.0976 6.68342 18.0976 7.31658 17.7071 7.70711L7.70711 17.7071C7.31658 18.0976 6.68342 18.0976 6.29289 17.7071Z' fill='%23FF003D'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M17 18C16.4477 18 16 17.5523 16 17L16 8L7 8C6.44772 8 6 7.55228 6 7C6 6.44771 6.44772 6 7 6L17 6C17.5523 6 18 6.44771 18 7L18 17C18 17.5523 17.5523 18 17 18Z' fill='%23FF003D'/%3E%3C/svg%3E%0A");
-		background-size: cover;
-		transition: var(--transition);
-	}
-}
-
 .title-category {
 	@extend h1;
 	@include size.calculate(font-size, 320px, 1780px, 30px, 50px);
 	font-weight: 300;
 	line-height: 1.2;
 	letter-spacing: -0.02em;
-}
-
-.title-project {
-	@extend h1;
-	@include size.calculate(font-size, 320px, 1780px, 40px, 80px);
-	font-weight: 300;
-	line-height: 1.1;
-	letter-spacing: -0.04em;
-	text-transform: none;
 }

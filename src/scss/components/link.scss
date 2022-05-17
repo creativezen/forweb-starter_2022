@@ -1,66 +1,8 @@
 @use "../mixins/fluid-size" as size;
+@use "../mixins/disable-mob-hover" as modile;
 
 // link
 // =========================
 .link {
-  // color: var(--white);
-}
 
-
-// link icon
-// =========================
-.link-icon {
-  $parent: &;
-  // @extend .link;
-  display: flex;
-  align-items: center;
-  @include size.calculate(font-size, 320px, 1780px, 20px, 26px);
-  letter-spacing: 0.01em;
-  text-decoration: none;
-
-  &:hover {
-    #{$parent}__svg {
-      transform: translateX(5px);
-      use {
-        fill: var(--white);
-      }
-    }
-  }
-
-  &__svg {
-    margin-left: 10px;
-    @include size.calculate(widht, 320px, 1780px, 20px, 24px);
-    @include size.calculate(height, 320px, 1780px, 20px, 24px);
-    transition: var(--transition);
-
-    use {
-      fill: var(--brand-red);
-    }
-  }
-}
-
-// link back
-// =========================
-.link-back {
-  display: inline-block;
-  transform: rotate(-180deg);
-  &__svg {
-    @include size.calculate(width, 320px, 1780px, 60px, 90px);
-
-    use {
-      fill: var(--white);
-    }
-  }
-}
-
-// link absolute
-// ===========================
-.link-absolute {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
 }

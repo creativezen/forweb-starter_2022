@@ -1,5 +1,5 @@
 {
-  "name": "delta-paintball",
+  "name": "forweb gulp-starter",
   "version": "1.0",
   "description": "gulp-builder for weblayout",
   "main": "gulpfile.js",
@@ -28,7 +28,6 @@
     "gulp-clean-css": "^4.3.0",
     "gulp-cli": "^2.3.0",
     "gulp-file-include": "^2.3.0",
-    "gulp-htmlmin": "^5.0.1",
     "gulp-if": "^3.0.0",
     "gulp-imagemin": "^7.1.0",
     "gulp-notify": "^3.2.0",
@@ -55,12 +54,7 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
-    "@barba/core": "^2.9.7",
-    "@popperjs/core": "^2.11.2",
-    "gsap": "^3.10.4",
     "inputmask": "^5.0.7",
-    "lazysizes": "^5.3.2",
-    "mkdirp": "^1.0.0",
-    "simplebar": "^5.3.6"
+    "lazysizes": "^5.3.2"
   }
 }

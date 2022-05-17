@@ -23,13 +23,15 @@
 // Button default
 // ===================================
 .btn-default {
+
   @extend .btn-proto;
-  @include size.calculate(padding-top, 320px, 1780px, 22px, 29px);
-  @include size.calculate(padding-bottom, 320px, 1780px, 22px, 29px);
-  @include size.calculate(padding-right, 320px, 1780px, 20px, 36px);
-  @include size.calculate(padding-left, 320px, 1780px, 20px, 36px);
+
+  @include size.calculate(padding-top, 320px, 1380px, 22px, 29px);
+  @include size.calculate(padding-bottom, 320px, 1380px, 22px, 29px);
+  @include size.calculate(padding-right, 320px, 1380px, 20px, 36px);
+  @include size.calculate(padding-left, 320px, 1380px, 20px, 36px);
   border-radius: 100px;
-  @include size.calculate(font-size, 320px, 1780px, 18px, 22px);
+  @include size.calculate(font-size, 320px, 1380px, 18px, 22px);
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.02em;
@@ -94,7 +96,7 @@
 // ===================================
 .btn-more {
   @extend .btn-proto;
-  @include size.calculate(padding, 320px, 1780px, 8px, 10px);
+  @include size.calculate(padding, 320px, 1380px, 8px, 10px);
   border: none;
   border-radius: 8px;
   background-color: rgba(white, 0.2);
@@ -127,7 +129,7 @@
   border-radius: 1000px;
   border-color: rgba(142, 142, 156, 0.5);
   color: var(--gray);
-  @include size.calculate(font-size, 320px, 1700px, 13px, 17px);
+  @include size.calculate(font-size, 320px, 1380px, 13px, 17px);
 
   @include mobile.hover {
     border-color: var(--white);
