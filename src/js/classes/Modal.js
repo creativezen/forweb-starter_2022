@@ -1,4 +1,4 @@
-export default class GraphModal {
+export default class ForwebModal {
   constructor(options) {
     let defaultOptions = {
       isOpen: () => {},

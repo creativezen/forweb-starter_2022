@@ -1,6 +1,6 @@
-import GraphModal from "../classes/Modal";
+import ForwebModal from "../classes/Modal";
 
-export const modal = new GraphModal();
+export const modal = new ForwebModal();
 
 document.querySelectorAll('.forweb-modal__container').forEach(item => {
   item.addEventListener('click', function(e) {
