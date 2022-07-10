@@ -1,11 +1,10 @@
+@use "./mixins/fluid-size" as size;
+
 body {
   background-color: var(--white);
-  font-family: var(--font-family);
-  color: var(--black);
-}
-
-main {
-  opacity: 1;
+  font-family: var(--font-text);
+  @include size.calculate(font-size, 320px, 1380px, 14px, 16px);
+  color: var(--black-text);
 }
 
 img {
@@ -15,24 +14,38 @@ img {
 }
 
 b {
-  color: var(--black);
+  color: var(--dark-black);
 }
 
 a {
-  color: var(--blue);
+  color: inherit;
+  transition: var(--transition);
+  text-decoration: none;
 }
 
-.red {
-  color: var(--red);
+.block {
+  width: 100%;
+  min-width: 100%;
+}
+
+.black {
+  color: var(--brand-black);
+}
+
+.green {
+  color: var(--brand-green);
+}
+
+.yellow {
+  color: var(--brand-yellow);
 }
 
 .white {
   color: var(--white);
 }
 
-.block {
-  width: 100%;
-  min-width: 100%;
+.italic {
+  font-style: italic;
 }
 
 .is-hidden {
@@ -69,7 +82,7 @@ a {
   outline: none;
 }
 
-.scroll-disabled {
+.dis-scroll {
   position: fixed;
   left: 0;
   top: 0;
@@ -79,10 +92,25 @@ a {
   overscroll-behavior: none;
 }
 
-.page--ios .scroll-disabled {
+.page--ios .dis-scroll {
   position: relative;
 }
 
+[data-visible="mobile"] {
+  display: none !important;
+
+  &.visible-mobile {
+    display: block !important;
+  }
+}
+
+[data-visible="desktop"] {
+  display: block !important;
+
+  &.visible-desktop {
+    display: none !important;
+  }
+}
 // Делаем копирайт Яндекс Карт невидимым
 // [class*="copyrights-pane"] {
 //   display: none !important;

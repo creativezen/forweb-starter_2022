@@ -1,11 +1,7 @@
 @use "../mixins/fluid-size" as size;
-@use "../mixins/disable-mob-hover" as modile;
 
 .page {
   height: 100%;
-  font-family: var(--font-family);
-  @include size.calculate(font-size, 320px, 1380px, 14px, 17px);
-  color: var(--dark-primary);
 }
 
 .page__body {
@@ -14,5 +10,4 @@
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  background-color: var(--white);
 }

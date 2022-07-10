@@ -3,10 +3,20 @@
 // grid group
 // ===================================
 .grid-group {
-
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   @include size.calculate(gap, 320px, 1380px, 20px, 40px);
+
+  @media only screen and (max-width: 880px) {
+    // Выстраиваем контентный блок и сайдбар
+    // во всю ширину основной колонки
+    &.section__sidebar {
+      [data-grid="8"],
+      [data-grid="4"] {
+        grid-column: 12 span;
+      }
+    }
+  }
 }
 
 // grid child
@@ -14,13 +24,9 @@
 .grid-child {
 
   &[data-grid="12"] { grid-column: 12 span; }
-
   &[data-grid="8"] { grid-column: 8 span; }
-
   &[data-grid="6"] { grid-column: 6 span; }
-
   &[data-grid="4"] { grid-column: 4 span; }
-
   &[data-grid="3"] { grid-column: 3 span; }
 
   @media only screen and (max-width: 780px) {
@@ -38,5 +44,10 @@
     &[data-grid="3"] {
       grid-column: 12 span;
     }
+  }
+
+  // Устанавливаем всем карточкам в потоке равную высоту
+  &:not(.aside) > [class*='card'] {
+    height: 100%;
   }
 }

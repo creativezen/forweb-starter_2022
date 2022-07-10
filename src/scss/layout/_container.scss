@@ -3,10 +3,10 @@
 // container
 // ===================================
 .container {
+  max-width: var(--content-width);
   margin: 0 auto;
   padding-top: 0;
   padding-bottom: 0;
   @include size.calculate(padding-left, 320px, 1380px, 16px, 40px);
   @include size.calculate(padding-right, 320px, 1380px, 16px, 40px);
-  max-width: var(--container-width);
 }

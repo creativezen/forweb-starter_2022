@@ -1,8 +1,6 @@
-@use "../mixins/fluid-size" as size;
-@use "../mixins/disable-mob-hover" as modile;
+@use "./mixins/fluid-size" as size;
+@use "./mixins/disable-mob-hover" as mobile;
 
-// header
-// ======================
 .header {
 
 }
